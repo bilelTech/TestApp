@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FDJApp</string>
+    <string name="network_error_msg">Network error, please try again later</string>
+    <string name="server_error_msg">Error Server! Please try again</string>
+</resources>
