@@ -5,9 +5,6 @@ Architecture
 ---------------
 When start developpment an Android app it's very important to plan the architecture of the project becuse it will allow us to create complex, robust, good quality, easy to maintain applications so for this project i choose implemented MVVM + Clean Architecture becuase it's very recomanded.
 
-This diagram will show you the modules and their interactions that we will be using:
-![Architecture](screenshots/architecture.png "Architecture")
-
 Structure
 ---------------
 data: (Model). Where we perform data operations(local and remote data).
