@@ -2,6 +2,7 @@ package com.test.fdjapp.data.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.mock
+import com.nhaarman.mockitokotlin2.verify
 import com.test.fdjapp.BuildConfig
 import com.test.fdjapp.data.constants.Constants
 import com.test.fdjapp.data.local.LeagueDao
@@ -62,6 +63,9 @@ class LeaguesRepositoryImplTest {
         flow.collect { result: Result<List<LeagueEntity>> ->
             assert(result.isSuccess)
         }
+        verify(remoteApi).getAllLeagues(BuildConfig.API_KEY)
+        verify(leaguesDao).clear()
+        verify(leaguesDao).insert(leagueData)
     }
 
     @Test

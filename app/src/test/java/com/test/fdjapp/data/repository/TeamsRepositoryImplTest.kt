@@ -1,8 +1,10 @@
 package com.test.fdjapp.data.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.nhaarman.mockitokotlin2.verify
 import com.test.fdjapp.BuildConfig
 import com.test.fdjapp.data.local.TeamDao
+import com.test.fdjapp.data.models.TeamData
 import com.test.fdjapp.data.remote.RemoteApi
 import com.test.fdjapp.data.remote.response.teams.Team
 import com.test.fdjapp.data.remote.response.teams.TeamsResponse
@@ -50,6 +52,13 @@ class TeamsRepositoryImplTest {
 
     @Test
     fun getTeamsSuccess() = runBlocking {
+        val teamData = TeamData(
+            id = "123",
+            nameTeam = "",
+            nameLeague = "",
+            image = "",
+            description = ""
+        )
         val team = Team(
             idTeam = "123",
             idAPIfootball = "",
@@ -124,6 +133,8 @@ class TeamsRepositoryImplTest {
         flow.collect { result: Result<List<TeamEntity>> ->
             assert(result.isSuccess)
         }
+        verify(remoteApi).searchTeamsByLeague(BuildConfig.API_KEY, "test")
+        verify(teamDao).insert(teamData)
     }
 
     @Test

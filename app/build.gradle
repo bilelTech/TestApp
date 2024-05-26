@@ -112,8 +112,8 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     // Mockito
-    testImplementation 'org.mockito:mockito-core:4.0.0'
-    testImplementation "org.mockito:mockito-inline:3.6.0"
+    testImplementation 'org.mockito:mockito-core:5.0.0'
+    testImplementation "org.mockito:mockito-inline:5.0.0"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
     testImplementation 'io.mockk:mockk-jvm:1.13.2'
 
@@ -121,5 +121,5 @@ dependencies {
     testImplementation 'com.squareup.okhttp3:mockwebserver:4.9.1'
     testImplementation 'androidx.arch.core:core-testing:2.2.0'
     testImplementation 'androidx.test:runner:1.5.2'
-    testImplementation 'org.robolectric:robolectric:4.0.2'
+    testImplementation 'org.robolectric:robolectric:4.2.1'
 }
